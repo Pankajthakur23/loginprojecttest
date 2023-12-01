@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('register',[AdminController::class,'register'])->name('res');
+Route::post('store',[AdminController::class,'store'])->name('store');
+Route::get('login',[AdminController::class,'login'])->name('login');
+Route::get('auth',[AdminController::class,'authentication'])->name('auth');
+Route::view('dash','dash')->name('dash');
+Route::get('logout',[AdminController::class,'logout'])->name('logout');
